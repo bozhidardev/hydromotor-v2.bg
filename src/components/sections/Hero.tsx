@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
@@ -9,9 +10,14 @@ import { Button } from '@/components/ui/Button';
 export function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero-concrete-pump-sharp.jpg')", backgroundPosition: 'center 30%' }}
+      <Image
+        src="/images/hero-concrete-pump-sharp.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover"
+        style={{ objectPosition: 'center 30%' }}
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/50 to-dark/90" />
 
