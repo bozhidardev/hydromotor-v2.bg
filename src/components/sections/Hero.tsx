@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { withBasePath } from '@/lib/basePath';
 
 export function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       <Image
-        src="/images/hero-concrete-pump-sharp.jpg"
+        src={withBasePath('/images/hero-concrete-pump-sharp.jpg')}
         alt=""
         fill
         priority

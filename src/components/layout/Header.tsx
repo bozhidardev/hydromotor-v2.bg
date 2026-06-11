@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, CONTACT } from '@/data/content';
+import { withBasePath } from '@/lib/basePath';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 
@@ -44,7 +45,7 @@ export function Header() {
       >
         <div className="max-w-container mx-auto container-padding flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark rounded-lg">
-            <Image src="/images/logo_Hydromotor.png" alt="Хидромотор ООД" width={40} height={40} className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
+            <Image src={withBasePath('/images/logo_Hydromotor.png')} alt="Хидромотор ООД" width={40} height={40} className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
             <div>
               <span className="text-lg font-bold text-white tracking-wide font-heading">ХИДРОМОТОР</span>
               <span className="block text-xs text-gold text-overline">

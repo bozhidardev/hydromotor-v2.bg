@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/shared/ScrollToTop';
+import { withBasePath } from '@/lib/basePath';
 import './globals.css';
 
 const inter = Inter({
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
     locale: 'bg_BG',
   },
   icons: {
-    icon: '/images/favicon-32.png',
-    apple: '/images/favicon-180.png',
+    icon: withBasePath('/images/favicon-32.png'),
+    apple: withBasePath('/images/favicon-180.png'),
   },
 };
 

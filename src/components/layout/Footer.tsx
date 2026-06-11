@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Linkedin } from 'lucide-react';
 import { COMPANY, NAV_LINKS, CONTACT, SERVICES } from '@/data/content';
+import { withBasePath } from '@/lib/basePath';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Image src="/images/logo_Hydromotor.png" alt="Хидромотор ООД" width={40} height={40} className="h-10 w-auto" />
+              <Image src={withBasePath('/images/logo_Hydromotor.png')} alt="Хидромотор ООД" width={40} height={40} className="h-10 w-auto" />
               <div>
                 <span className="text-lg font-bold text-white tracking-wide font-heading">ХИДРОМОТОР</span>
                 <span className="block text-xs text-gold text-overline">

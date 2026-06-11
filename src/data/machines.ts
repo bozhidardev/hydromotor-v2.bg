@@ -1,3 +1,5 @@
+import { withBasePath } from '@/lib/basePath';
+
 export interface MachineSpec {
   [key: string]: string;
 }
@@ -19,7 +21,7 @@ export const MACHINES: Machine[] = [
     brand: 'Putzmeister',
     name: 'M 38-5',
     category: 'Автобетонпомпи',
-    image: '/images/putzmeister-p5.jpg',
+    image: withBasePath('/images/putzmeister-p5.jpg'),
     description:
       '38-метрова автобетонпомпа с 5 раменна Roll Z-образна стрела. Изключително ниска височина на разгъване, оптимални плъзгащи свойства.',
     features: [
@@ -42,7 +44,7 @@ export const MACHINES: Machine[] = [
     brand: 'Putzmeister',
     name: 'M 62-6',
     category: 'Автобетонпомпи',
-    image: '/images/putzmeister-p6.jpg',
+    image: withBasePath('/images/putzmeister-p6.jpg'),
     description:
       '62-метрова автобетонпомпа с 6-секционна RZ-образна стрела. Максимална гъвкавост с вертикален обхват от 61.1 m.',
     features: [
@@ -67,7 +69,7 @@ export const MACHINES: Machine[] = [
     brand: 'Putzmeister',
     name: 'M 36-4',
     category: 'Автобетонпомпи',
-    image: '/images/putzmeister-p4.jpg',
+    image: withBasePath('/images/putzmeister-p4.jpg'),
     description:
       '36-метрова автобетонпомпа с 4 раменна Z-образна стрела. Брутно тегло <26 t с резерви. Стабилна стрела с интелигентно окабеляване.',
     features: [
@@ -96,7 +98,7 @@ export const MACHINES: Machine[] = [
     brand: 'SANY',
     name: 'SANY SY25 Z4',
     category: 'Автобетонпомпи SANY',
-    image: '/images/sany-20m.jpg',
+    image: withBasePath('/images/sany-20m.jpg'),
     description:
       'SANY 20 метров клас с вертикален обхват 24.6 m. Компактна автобетонпомпа за малки строителни обекти.',
     features: [
@@ -121,7 +123,7 @@ export const MACHINES: Machine[] = [
     brand: 'SANY',
     name: 'SANY SY37 RZ5',
     category: 'Автобетонпомпи SANY',
-    image: '/images/sany-30m.jpg',
+    image: withBasePath('/images/sany-30m.jpg'),
     description:
       'SANY 30 метров клас с вертикален обхват 36.5 m. 5 раменна RZ-образна стрела. Подходяща за почти всички приложения.',
     features: [
@@ -146,7 +148,7 @@ export const MACHINES: Machine[] = [
     brand: 'SANY',
     name: 'SANY SY56 RZ6',
     category: 'Автобетонпомпи SANY',
-    image: '/images/sany-50m.jpg',
+    image: withBasePath('/images/sany-50m.jpg'),
     description:
       'SANY 50 метров клас с вертикален обхват 56.0 m. 6-раменна RZ-образна стрела. Най-ново поколение с висока производителност.',
     features: [
@@ -171,7 +173,7 @@ export const MACHINES: Machine[] = [
     brand: 'SANY',
     name: 'SANY SY62 RZ6',
     category: 'Автобетонпомпи SANY',
-    image: '/images/sany-60m.jpg',
+    image: withBasePath('/images/sany-60m.jpg'),
     description:
       'SANY 60 метров клас с вертикален обхват 62.0 m. 6-раменна RZ-образна стрела. Максимална производителност.',
     features: [
