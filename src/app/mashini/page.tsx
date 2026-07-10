@@ -15,7 +15,7 @@ export default function MachinesPage() {
       : MACHINES.filter((m) => m.category === activeCategory);
 
   return (
-    <div className="pt-28 pb-20 md:pb-28">
+    <div className="concrete-section pt-32 pb-20 md:pb-28">
       <div className="max-w-container mx-auto container-padding">
         <Link
           href="/"
@@ -25,14 +25,14 @@ export default function MachinesPage() {
           Начало
         </Link>
 
-        <div className="mb-16 md:mb-20">
+        <div className="mb-14 border-l-4 border-gold pl-6 md:mb-16">
           <span className="inline-block text-overline font-semibold uppercase text-gold mb-5 leading-none">
             Машини
           </span>
-          <h1 className="font-heading text-h1 font-semibold text-white mb-6">
+          <h1 className="font-heading text-h1 font-extrabold uppercase text-ink mb-6">
             Автобетонпомпи и <span className="gold-gradient-text">строителна техника</span>
           </h1>
-          <p className="text-text-secondary text-body-lg max-w-2xl">
+          <p className="text-ink/65 text-body-lg max-w-2xl">
             Официален представител на Putzmeister и SANY за България. Пълна гама машини за всяка
             строителна нужда.
           </p>
@@ -45,10 +45,10 @@ export default function MachinesPage() {
               key={cat.value}
               onClick={() => setActiveCategory(cat.value)}
               aria-pressed={activeCategory === cat.value}
-              className={`min-h-[44px] inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark ${
+              className={`min-h-[44px] inline-flex items-center px-4 py-2 text-sm font-semibold transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 ${
                 activeCategory === cat.value
-                  ? 'gold-gradient-bg text-dark'
-                  : 'bg-surface-light text-text-secondary hover:text-white hover:bg-surface-elevated'
+                  ? 'bg-ink text-white'
+                  : 'bg-white border border-black/15 text-ink/65 hover:text-gold hover:border-gold'
               }`}
             >
               {cat.label}
@@ -61,9 +61,9 @@ export default function MachinesPage() {
             <Link
               key={machine.slug}
               href={`/mashini/${machine.slug}`}
-              className="group block glass-card rounded-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]"
+              className="group block overflow-hidden border border-black/15 bg-white transition duration-200 hover:-translate-y-1 hover:border-gold hover:shadow-[0_18px_42px_rgba(16,18,20,0.12)]"
             >
-              <div className="aspect-[16/10] bg-surface-light relative overflow-hidden">
+              <div className="aspect-[16/10] bg-[#d8d5ce] relative overflow-hidden">
                 <Image
                   src={machine.image}
                   alt={`${machine.brand} ${machine.name}`}
@@ -71,13 +71,12 @@ export default function MachinesPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
                 <div className="absolute top-3 left-3">
                   <span
                     className={`inline-block px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wide ${
                       machine.brand === 'Putzmeister'
                         ? 'gold-gradient-bg text-dark'
-                        : 'bg-surface-elevated text-text-secondary border border-text-muted/30'
+                        : 'bg-ink text-white border border-white/20'
                     }`}
                   >
                     {machine.brand}
@@ -86,10 +85,10 @@ export default function MachinesPage() {
               </div>
 
               <div className="p-5">
-                <h3 className="font-heading text-lg font-semibold text-white group-hover:text-gold transition-colors duration-300 mb-2">
+                <h3 className="font-heading text-xl font-bold uppercase text-ink group-hover:text-gold transition-colors duration-200 mb-2">
                   {machine.name}
                 </h3>
-                <p className="text-text-secondary text-sm line-clamp-2 mb-3">
+                <p className="text-ink/65 text-sm line-clamp-2 mb-3">
                   {machine.description}
                 </p>
                 <div className="flex items-center gap-1 text-gold text-sm font-medium group-hover:gap-2 transition-all duration-300">
@@ -102,12 +101,12 @@ export default function MachinesPage() {
         </div>
 
         <div className="mt-16 md:mt-20 text-center">
-          <p className="text-text-secondary mb-6 max-w-xl mx-auto">
+          <p className="text-ink/65 mb-6 max-w-xl mx-auto">
             Не сте сигурни коя машина е подходяща за вашия проект? Свържете се с нас за безплатна консултация.
           </p>
           <Link
             href="/kontakti"
-            className="inline-flex items-center gap-2 gold-gradient-bg text-dark px-6 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
+            className="inline-flex items-center gap-2 bg-gold text-white px-6 py-3 font-bold uppercase tracking-[0.08em] hover:bg-gold-light transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
           >
             Заявете консултация
             <ArrowRight size={16} />

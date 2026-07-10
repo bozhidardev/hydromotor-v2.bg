@@ -4,76 +4,56 @@ import React from 'react';
 import { ArrowRight, Award, Calendar, Package, Wrench } from 'lucide-react';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 import { Button } from '@/components/ui/Button';
-import { GoldDivider } from '@/components/ui/GoldDivider';
+
+const facts = [
+  { icon: Award, value: '25+', label: 'години опит' },
+  { icon: Calendar, value: '1998', label: 'Putzmeister партньор' },
+  { icon: Package, value: '24 ч.', label: 'спешна доставка' },
+  { icon: Wrench, value: '24/7', label: 'авариен сервиз' },
+];
 
 export function AboutPreview() {
   return (
-    <section className="section-dark section-padding relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial-gold pointer-events-none" />
-        <div className="max-w-container mx-auto container-padding">
-        <GoldDivider className="mb-16 md:mb-20" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="concrete-section section-padding overflow-hidden">
+      <div className="mx-auto max-w-container container-padding">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <ScrollReveal direction="left">
-            <div>
-              <span className="block text-overline font-semibold uppercase text-gold mb-5 leading-none">
-                За нас
-              </span>
-              <h2 className="font-heading text-h2 font-semibold text-white mb-6">
-                Надежден партньор в строителната техника от{' '}
-                <span className="gold-gradient-text">1996</span>
+            <div className="max-w-xl">
+              <div className="mb-6 flex items-center gap-4">
+                <span className="h-px w-12 bg-gold" />
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-gold">За Хидромотор</span>
+              </div>
+              <h2 className="font-heading text-[clamp(2.8rem,5vw,5.2rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.035em] text-ink">
+                До машината. До клиента. <span className="text-gold">От 1996.</span>
               </h2>
-              <p className="text-text-secondary text-body leading-relaxed mb-4">
-                От малка сервизна работилница през 1996 г. до днешен ден — изградихме репутация на надежден партньор, на когото строителите в България се доверяват.
+              <p className="mt-7 text-lg leading-relaxed text-ink/70">
+                От сервизна работилница до национален партньор за строителна техника — изградихме име с навременна реакция, техническа експертиза и отговорност към всеки обект.
               </p>
-              <p className="text-text-secondary text-body leading-relaxed mb-8">
-                Като официален представител за България на Putzmeister, ние предоставяме пълна гама машини, резервни части и сертифициран сервиз — всичко необходимо за безпроблемна експлоатация.
+              <p className="mt-4 leading-relaxed text-ink/65">
+                Като официален представител на Putzmeister предлагаме цялото решение: избор на машина, оригинални резервни части, профилактика и ремонт на място.
               </p>
-              <Button href="/za-nas" variant="secondary">
-                Научете повече
-                <ArrowRight size={16} />
-              </Button>
+              <div className="mt-9">
+                <Button href="/za-nas" variant="dark">
+                  Научете повече <ArrowRight size={17} />
+                </Button>
+              </div>
             </div>
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden glass relative border-t border-gold/30">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-surface-light/50 to-dark/80" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(200,168,85,0.12),transparent_60%)]" />
-                <div className="relative flex items-center justify-center h-full p-8">
-                  <div className="grid grid-cols-2 gap-6 w-full">
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg gold-gradient-bg flex items-center justify-center mx-auto mb-3 shadow-[0_4px_15px_rgba(200,168,85,0.3)]">
-                        <Award size={22} className="text-dark" />
-                      </div>
-                      <div className="text-h2 font-semibold text-white font-mono mb-1">25+</div>
-                      <div className="text-text-secondary text-sm">Години опит</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg bg-surface-elevated flex items-center justify-center mx-auto mb-3">
-                        <Calendar size={22} className="text-gold" />
-                      </div>
-                      <div className="text-h2 font-semibold text-white font-mono mb-1">1998</div>
-                      <div className="text-text-secondary text-sm">Putzmeister представител</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg bg-surface-elevated flex items-center justify-center mx-auto mb-3">
-                        <Package size={22} className="text-gold" />
-                      </div>
-                      <div className="text-h2 font-semibold text-white font-mono mb-1">24/7</div>
-                      <div className="text-text-secondary text-sm">Авариен сервиз</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg bg-surface-elevated flex items-center justify-center mx-auto mb-3">
-                        <Wrench size={22} className="text-gold" />
-                      </div>
-                      <div className="text-h2 font-semibold text-white font-mono mb-1">100%</div>
-                      <div className="text-text-secondary text-sm">Оригинални части</div>
-                    </div>
+            <div className="border-t-4 border-gold bg-ink p-6 text-white md:p-10">
+              <p className="mb-8 max-w-lg font-heading text-2xl font-bold uppercase leading-tight">
+                Един екип за машината през целия ѝ работен живот.
+              </p>
+              <div className="grid grid-cols-2 border-l border-t border-white/12">
+                {facts.map((fact) => (
+                  <div key={fact.label} className="border-b border-r border-white/12 p-5 md:p-7">
+                    <fact.icon size={21} className="mb-5 text-gold" />
+                    <div className="font-heading text-4xl font-extrabold leading-none">{fact.value}</div>
+                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.11em] text-text-secondary">{fact.label}</div>
                   </div>
-                </div>
+                ))}
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 gold-gradient-bg rounded-lg opacity-20 blur-sm" />
             </div>
           </ScrollReveal>
         </div>

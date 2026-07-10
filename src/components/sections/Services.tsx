@@ -17,18 +17,16 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function Services() {
   return (
-    <section className="section-elevated section-padding relative">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
-      </div>
+    <section className="section-dark technical-grid section-padding relative">
       <div className="max-w-container mx-auto container-padding relative">
-        <GoldDivider className="mb-16 md:mb-20" />
+        <GoldDivider className="mb-12 md:mb-16" />
         <ScrollReveal>
           <SectionHeading
             overline="Сервиз"
             title="Професионален сервиз и поддръжка"
             description="Съвременно оборудван сервиз за диагностика и ремонт. Сертифицирани инженери и 24/7 аварийна помощ."
-            variant="minor"
+            align="left"
+            variant="left"
           />
         </ScrollReveal>
 
@@ -37,13 +35,13 @@ export function Services() {
             const Icon = iconMap[service.icon] || Search;
             return (
               <ScrollReveal key={service.title} staggerIndex={i}>
-                <div className="glass-card rounded-lg p-6 md:p-8 h-full border-t-2 border-transparent hover:border-gold/30 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-lg bg-surface-elevated flex items-center justify-center">
+                <div className="h-full border border-surface-border bg-surface-card p-6 transition duration-200 hover:border-gold md:p-8">
+                  <div className="flex items-start gap-5">
+                    <div className="shrink-0 w-12 h-12 border border-gold/50 flex items-center justify-center">
                       <Icon size={22} className="text-gold" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-lg font-semibold text-white mb-2">{service.title}</h3>
+                      <h3 className="font-heading text-xl font-bold uppercase text-white mb-2">{service.title}</h3>
                       <p className="text-text-secondary text-sm leading-relaxed">
                         {service.description}
                       </p>
@@ -59,13 +57,13 @@ export function Services() {
           const Icon = iconMap[service.icon] || Search;
           return (
             <ScrollReveal key={service.title} delay={0.3}>
-              <div className="glass-card-featured rounded-lg p-6 md:p-8 mt-6 md:mt-8">
+              <div className="glass-card-featured p-6 md:p-8 mt-6 md:mt-8">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                  <div className="shrink-0 w-14 h-14 rounded-lg gold-gradient-bg flex items-center justify-center shadow-[0_4px_15px_rgba(200,168,85,0.3)]">
-                    <Icon size={24} className="text-dark" />
+                  <div className="shrink-0 w-14 h-14 bg-gold flex items-center justify-center">
+                    <Icon size={24} className="text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-heading text-xl font-semibold text-white mb-2">{service.title}</h3>
+                    <h3 className="font-heading text-2xl font-bold uppercase text-white mb-2">{service.title}</h3>
                     <p className="text-text-secondary leading-relaxed">
                       {service.description}
                     </p>

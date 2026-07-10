@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Roboto_Condensed } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/shared/ScrollToTop';
@@ -12,10 +12,10 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-space-grotesk',
+const robotoCondensed = Roboto_Condensed({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['500', '600', '700', '800'],
+  variable: '--font-roboto-condensed',
 });
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bg" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="bg" className={`${inter.variable} ${robotoCondensed.variable}`}>
       <body className="bg-dark text-text-primary font-body antialiased">
         <a href="#main-content" className="skip-link">
           Към основното съдържание

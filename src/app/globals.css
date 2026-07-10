@@ -15,7 +15,8 @@
   }
 
   ::selection {
-    @apply bg-gold/50 text-dark;
+    background: #c8351d;
+    color: #ffffff;
   }
 
   a:focus-visible,
@@ -24,201 +25,147 @@
   select:focus-visible,
   textarea:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #C8A855, 0 0 0 4px #0A0A0A;
-    border-radius: 6px;
+    box-shadow: 0 0 0 2px #c8351d, 0 0 0 5px rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
   }
 
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-dark;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-dark-50 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gold/50;
-  }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #101214; }
+  ::-webkit-scrollbar-thumb { background: #50585e; }
+  ::-webkit-scrollbar-thumb:hover { background: #c8351d; }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    background: #171a1d;
+    border: 1px solid #343a3f;
   }
 
   .glass-card {
-    @apply bg-surface-card/80 backdrop-blur-md border border-white/10 rounded-lg;
-    @apply hover:border-gold/30 hover:shadow-[0_0_30px_rgba(200,168,85,0.1)] transition-all duration-300;
-    @apply focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+    @apply bg-surface-card border border-surface-border rounded-lg;
+    transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   }
 
-  .gold-glow-hover {
-    transition: all 0.3s ease;
-  }
-  .gold-glow-hover:hover {
-    border-color: rgba(200, 168, 85, 0.3);
-    box-shadow: 0 0 30px rgba(200, 168, 85, 0.08);
+  .glass-card:hover {
+    border-color: rgba(200, 53, 29, 0.68);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
   }
 
-  .gold-gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #C8A855 0%, #E8C872 50%, #C8A855 100%);
-  }
+  .gold-glow-hover { transition: border-color 180ms ease, transform 180ms ease; }
+  .gold-glow-hover:hover { border-color: #c8351d; transform: translateY(-2px); }
 
-  .gold-gradient-bg {
-    background-image: linear-gradient(135deg, #C8A855 0%, #D4AF37 50%, #E8C872 100%);
-  }
+  .gold-gradient-text { color: #c8351d; }
+  .gold-gradient-bg { background: #c8351d; }
+  .gold-gradient-bg.text-dark { color: #ffffff; }
+  .gold-gradient-bg-hover { background: #d4381e; }
+  .gold-shimmer { background: #c8351d; }
 
-  .gold-gradient-bg-hover {
-    background-image: linear-gradient(135deg, #D4AF37 0%, #E8C872 50%, #C8A855 100%);
-  }
-
-  .gold-shimmer {
-    background-image: linear-gradient(90deg, #C8A855 0%, #E8C872 50%, #C8A855 100%);
-    background-size: 200% 100%;
-    animation: shimmer 2.5s ease-in-out infinite;
-  }
-
-  .section-padding {
-    @apply py-24 md:py-32 lg:py-40;
-  }
-
-  .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
+  .section-padding { @apply py-20 md:py-24 lg:py-28; }
+  .container-padding { @apply px-5 sm:px-8 lg:px-12; }
 
   .section-dark {
-    background: #0A0A0A;
+    background: #101214;
     position: relative;
-  }
-
-  .section-dark::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(200, 168, 85, 0.04) 0%, transparent 60%);
-    pointer-events: none;
   }
 
   .section-surface {
-    background: linear-gradient(180deg, #161616 0%, #111111 100%);
-    border-top: 1px solid rgba(200, 168, 85, 0.12);
-    border-bottom: 1px solid rgba(200, 168, 85, 0.12);
+    background: #15191c;
+    border-top: 1px solid #343a3f;
+    border-bottom: 1px solid #343a3f;
   }
 
   .section-elevated {
-    background: linear-gradient(180deg, #1A1A1A 0%, #141414 100%);
+    background: #171a1d;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid #343a3f;
+    border-bottom: 1px solid #343a3f;
+  }
+
+  .concrete-section {
+    color: #101214;
+    background-color: #f1eee7;
+    background-image:
+      linear-gradient(rgba(16, 18, 20, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 18, 20, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .technical-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .section-dark .text-gold,
+  .section-surface .text-gold,
+  .technical-grid .text-gold,
+  .bg-ink .text-gold {
+    color: #f2674d;
+  }
+
+  .technical-grid .gold-gradient-text {
+    color: #f2674d;
   }
 
   .bg-radial-gold {
-    background: radial-gradient(ellipse at center, rgba(200, 168, 85, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle at 82% 18%, rgba(227, 66, 36, 0.1), transparent 40%);
   }
 
-  .heading-underline {
-    @apply relative inline-block;
-  }
-
+  .heading-underline { @apply relative inline-block; }
   .heading-underline::after {
     content: '';
-    @apply absolute -bottom-2 left-0 h-[3px] rounded-full;
-    background-image: linear-gradient(90deg, #C8A855, #E8C872);
-    width: 80px;
+    @apply absolute -bottom-3 left-0 h-[3px];
+    background: #c8351d;
+    width: 72px;
   }
-
-  @media (min-width: 768px) {
-    .heading-underline::after {
-      width: 100px;
-    }
-  }
-
-  .heading-underline-center::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  .heading-underline-center::after { left: 50%; transform: translateX(-50%); }
 
   .skip-link {
-    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-dark focus:rounded-md focus:font-semibold;
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-white focus:font-semibold;
   }
 
   .gold-separator {
     @apply w-full h-px my-0;
-    background: linear-gradient(90deg, transparent, rgba(200, 168, 85, 0.3), transparent);
+    background: #343a3f;
   }
 
   .cta-contact-card {
-    @apply flex items-center gap-5 p-6 rounded-xl border border-gold/20;
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s ease;
+    @apply flex items-center gap-5 p-6 border border-surface-border;
+    background: #171a1d;
+    border-radius: 4px;
+    transition: border-color 180ms ease, transform 180ms ease;
   }
-  .cta-contact-card:hover {
-    border-color: rgba(200, 168, 85, 0.4);
-    background: rgba(200, 168, 85, 0.05);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  }
+  .cta-contact-card:hover { border-color: #c8351d; transform: translateY(-2px); }
 
   .glass-card-featured {
-    background: linear-gradient(135deg, rgba(200, 168, 85, 0.08) 0%, rgba(17, 17, 17, 0.8) 100%);
-    border-color: rgba(200, 168, 85, 0.3);
+    background: #1b1f22;
+    border: 1px solid #c8351d;
+    border-left-width: 5px;
     position: relative;
     overflow: hidden;
   }
 
-  .glass-card-featured-top-border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #C8A855, transparent);
-  }
+  .glass-card-featured-top-border { display: none; }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .animate-delay-100 {
-    animation-delay: 100ms;
-  }
-  .animate-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animate-delay-300 {
-    animation-delay: 300ms;
-  }
-  .animate-delay-400 {
-    animation-delay: 400ms;
-  }
+  .text-balance { text-wrap: balance; }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .gold-shimmer {
-    animation: none !important;
-  }
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

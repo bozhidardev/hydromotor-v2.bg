@@ -10,11 +10,12 @@ export function generateStaticParams() {
 }
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default function MachineDetailPage({ params }: PageProps) {
-  const machine = MACHINES.find((m) => m.slug === params.slug);
+export default async function MachineDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const machine = MACHINES.find((m) => m.slug === slug);
 
   if (!machine) {
     notFound();
@@ -24,7 +25,7 @@ export default function MachineDetailPage({ params }: PageProps) {
   const prevMachine = MACHINES[MACHINES.indexOf(machine) - 1];
 
   return (
-    <div className="pt-28 pb-20 md:pb-28">
+    <div className="technical-grid pt-32 pb-20 md:pb-28">
       <div className="max-w-container mx-auto container-padding">
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm list-none flex-wrap">
@@ -74,7 +75,7 @@ export default function MachineDetailPage({ params }: PageProps) {
             <span className="inline-block text-overline font-semibold uppercase text-gold mb-3">
               {machine.category}
             </span>
-            <h1 className="font-heading text-h2 font-semibold text-white mb-6">
+            <h1 className="font-heading text-h2 font-extrabold uppercase text-white mb-6">
               {machine.brand}{' '}
               <span className="gold-gradient-text">{machine.name}</span>
             </h1>

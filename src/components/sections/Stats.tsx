@@ -29,19 +29,23 @@ const stats = [
 
 export function Stats() {
   return (
-    <section id="stats" className="relative section-elevated">
+    <section id="stats" className="relative bg-ink text-white">
       <GoldDivider className="absolute top-0" />
-      <div className="max-w-container mx-auto container-padding py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <div className="mx-auto max-w-container container-padding">
+        <div className="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
           {stats.map((stat, i) => (
-            <ScrollReveal key={stat.label} staggerIndex={i} className="text-center">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <stat.icon size={28} className="text-gold" />
-                <div className="text-h2 font-semibold text-white font-mono">
+            <ScrollReveal key={stat.label} staggerIndex={i} className="py-8 md:px-9 md:py-11 first:md:pl-0 last:md:pr-0">
+              <div className="flex items-center gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-gold/50 text-gold">
+                  <stat.icon size={22} />
+                </div>
+                <div>
+                  <div className="font-heading text-4xl font-extrabold leading-none text-white">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-text-secondary">{stat.label}</p>
                 </div>
               </div>
-              <p className="text-text-secondary text-base uppercase tracking-wide font-medium">{stat.label}</p>
             </ScrollReveal>
           ))}
         </div>

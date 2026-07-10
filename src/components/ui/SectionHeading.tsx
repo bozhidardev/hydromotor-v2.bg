@@ -49,8 +49,8 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          'font-heading text-balance',
-          variant === 'minor' ? 'text-h3 font-semibold text-text-primary' : 'text-h2 font-semibold text-text-primary',
+          'font-heading text-balance uppercase tracking-[-0.025em]',
+          variant === 'minor' ? 'text-h3 font-bold text-text-primary' : 'text-h2 font-extrabold text-text-primary',
           showUnderline && 'heading-underline',
           showUnderline && effectiveAlign === 'center' && 'heading-underline-center',
         )}

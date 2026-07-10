@@ -20,19 +20,19 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center font-semibold tracking-wide uppercase transition-all duration-300 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark';
+    'inline-flex items-center justify-center font-bold tracking-[0.08em] uppercase transition-all duration-200 rounded-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2';
 
   const variants = {
     primary:
-      'gold-gradient-bg text-dark border border-gold/50 hover:-translate-y-0.5 active:scale-[0.98] shadow-[0_0_15px_rgba(200,168,85,0.25),0_4px_6px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.25)] hover:shadow-[0_0_25px_rgba(200,168,85,0.4),0_8px_16px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]',
+      'bg-gold text-white border border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 active:translate-y-0 shadow-[0_10px_24px_rgba(227,66,36,0.18)]',
     secondary:
-      'bg-gold/5 border-2 border-gold text-gold hover:bg-gold hover:text-dark active:scale-[0.98]',
+      'bg-white text-ink border border-ink/25 hover:border-gold hover:text-gold hover:-translate-y-0.5 active:translate-y-0',
     dark:
-      'bg-dark-100 text-white border border-white/10 shadow-lg hover:bg-dark-50 hover:border-gold/30 active:scale-[0.98]',
+      'bg-ink text-white border border-ink hover:bg-gold hover:border-gold hover:-translate-y-0.5 active:translate-y-0',
     ghost:
-      'text-gold hover:bg-gold/8 active:scale-[0.98]',
+      'text-gold border border-transparent hover:border-gold/40 hover:bg-gold/5',
     cta:
-      'gold-gradient-bg text-dark rounded-full px-10 py-5 text-lg font-bold tracking-wide uppercase shadow-[0_0_20px_rgba(200,168,85,0.3)] hover:shadow-[0_0_30px_rgba(200,168,85,0.5)] hover:-translate-y-0.5 active:scale-[0.98] animate-cta-pulse',
+      'bg-gold text-white border border-gold px-10 py-5 text-base font-bold hover:bg-white hover:text-ink hover:border-white hover:-translate-y-0.5',
   };
 
   const sizes = {

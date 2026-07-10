@@ -11,7 +11,14 @@ export function GoldDivider({ className, flipped = false }: { className?: string
 
   return (
     <div ref={ref} className={cn('relative h-px w-full', className)}>
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+      <div className="absolute left-0 top-0 h-px w-full bg-surface-border" />
+      <motion.div
+        className="absolute left-0 top-0 h-[3px] w-20 bg-gold"
+        initial={{ scaleX: 0 }}
+        animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        style={{ transformOrigin: flipped ? 'right' : 'left' }}
+      />
     </div>
   );
 }

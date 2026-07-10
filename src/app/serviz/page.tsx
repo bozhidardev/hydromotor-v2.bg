@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/Button';
 import { CONTACT } from '@/data/content';
 
 const processSteps = [
-  { icon: Search, title: 'Диагностика', description: 'Пълна проверка и анализ на проблема с модерна оборудивка.' },
+  { icon: Search, title: 'Диагностика', description: 'Пълна проверка и анализ на проблема с модерно оборудване.' },
   { icon: Clock, title: 'Бърза реакция', description: 'Мобилен екип на място в най-кратък срок.' },
   { icon: ShieldCheck, title: 'Качествен ремонт', description: 'Оригинални части и сертифицирани инженери.' },
   { icon: CheckCircle, title: 'Гаранция', description: 'Гаранция за извършените ремонти и инсталации.' },
@@ -19,7 +19,7 @@ const processSteps = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-28 pb-20 md:pb-28">
+    <div className="technical-grid pt-32 pb-20 md:pb-28">
       <div className="max-w-container mx-auto container-padding">
         <Link
           href="/"
@@ -29,11 +29,11 @@ export default function ServicesPage() {
           Начало
         </Link>
 
-        <div className="mb-16 md:mb-20">
+        <div className="mb-16 border-l-4 border-gold pl-6 md:mb-20">
           <span className="inline-block text-overline text-gold mb-5 leading-none">
             Сервиз
           </span>
-          <h1 className="font-heading text-h1 font-semibold text-white mb-6">
+          <h1 className="font-heading text-h1 font-extrabold uppercase text-white mb-6">
             Професионален <span className="gold-gradient-text">сервиз</span> и поддръжка
           </h1>
           <p className="text-text-secondary text-body-lg max-w-3xl">
@@ -51,7 +51,7 @@ export default function ServicesPage() {
                   <step.icon size={24} className="text-dark" />
                 </div>
                 <div className="text-gold text-sm font-semibold mb-1">Стъпка {i + 1}</div>
-                <h2 className="font-heading text-lg font-semibold text-white mb-2">{step.title}</h2>
+                <h2 className="font-heading text-xl font-bold uppercase text-white mb-2">{step.title}</h2>
                 <p className="text-text-secondary text-body-sm">{step.description}</p>
               </div>
             </ScrollReveal>
@@ -129,24 +129,24 @@ export default function ServicesPage() {
 
         <ScrollReveal>
           <div className="text-center">
-            <div className="gold-gradient-bg rounded-2xl p-6 md:p-10 lg:p-12 text-center">
-              <h2 className="font-heading text-h3 font-semibold text-dark mb-4">
+            <div className="gold-gradient-bg p-6 md:p-10 lg:p-12 text-center">
+              <h2 className="font-heading text-h3 font-extrabold uppercase text-white mb-4">
                 Нуждаете се от сервизна помощ?
               </h2>
-              <p className="text-dark/80 mb-8 max-w-xl mx-auto">
+              <p className="text-white/80 mb-8 max-w-xl mx-auto">
                 Свържете се с нас за консултация, диагностика или аварийна помощ.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/kontakti"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-dark text-white border border-dark/50 rounded-full font-semibold text-lg tracking-wide uppercase shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:bg-dark-100 hover:border-dark-100 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
+                  className="inline-flex items-center justify-center gap-3 bg-ink px-10 py-5 text-base font-bold uppercase tracking-[0.08em] text-white transition hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                 >
                   Контакти
                   <ArrowRight size={18} />
                 </Link>
                 <a
                   href={`tel:${CONTACT.servicePhones[0].replace(/\s/g, '')}`}
-                  className="inline-flex items-center gap-2 px-6 py-4 border-2 border-dark text-dark font-semibold rounded-full hover:bg-dark/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 focus-visible:ring-offset-gold"
+                  className="inline-flex items-center gap-2 border border-white/60 px-6 py-4 font-bold text-white transition-colors hover:bg-white hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                 >
                   <Phone size={18} />
                   {CONTACT.servicePhones[0]}

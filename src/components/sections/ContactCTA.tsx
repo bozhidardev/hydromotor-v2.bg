@@ -1,88 +1,49 @@
 'use client';
 
 import React from 'react';
-import { Phone, Mail, ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { CONTACT } from '@/data/content';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/shared/ScrollReveal';
 
 export function ContactCTA() {
   return (
-    <section className="relative section-padding overflow-hidden border-t-4 border-gold">
-      {/* Background glows */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -left-32 top-1/4 w-96 h-96 bg-gold/15 rounded-full blur-[100px]" />
-        <div className="absolute -right-32 bottom-1/4 w-80 h-80 bg-gold/8 rounded-full blur-[80px]" />
-      </div>
+    <section className="relative overflow-hidden bg-gold py-20 text-white md:py-24">
+      <div className="absolute -right-16 -top-32 select-none font-heading text-[24rem] font-extrabold leading-none text-white/[0.06]" aria-hidden="true">H</div>
+      <div className="relative z-10 mx-auto max-w-container container-padding">
+        <div className="grid items-end gap-12 lg:grid-cols-[1fr_auto]">
+          <ScrollReveal>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-white">Машини · Части · Сервиз</span>
+            <h2 className="mt-5 max-w-4xl font-heading text-[clamp(3.1rem,6vw,6.2rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.04em]">
+              Имате задача.<br />Ние имаме решение.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white">
+              Кажете ни каква техника, част или сервизна намеса ви е необходима. Ще получите конкретна препоръка от технически специалист.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <Button href="/kontakti" variant="dark" size="xl" className="w-full lg:w-auto">
+              Изпратете запитване <ArrowRight size={20} />
+            </Button>
+          </ScrollReveal>
+        </div>
 
-      {/* Diagonal accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-bl from-gold/[0.03] to-transparent" />
-      </div>
-
-      <div className="relative z-10 max-w-container mx-auto container-padding text-center">
-        <ScrollReveal>
-          <span className="inline-block text-overline font-semibold uppercase text-gold mb-6">
-            24/7 Авариен сервиз
-          </span>
-          <h2 className="font-heading text-h1 md:text-display font-semibold text-white mb-6">
-            Нуждаете се от{' '}
-            <span className="gold-gradient-text">сервиз</span>
-            <br className="hidden md:block" />
-            {' '}или консултация?
-          </h2>
-          <p className="text-body-lg text-text-secondary max-w-2xl mx-auto mb-12">
-            Нашият екип е готов да ви помогне — било то за избор на машина,
-            резервни части или спешен ремонт.
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="flex flex-col sm:flex-row items-stretch justify-center gap-6 mb-12 max-w-2xl mx-auto">
-            {/* Phone card */}
-            <a
-              href={`tel:${CONTACT.servicePhones[0].replace(/\s/g, '')}`}
-              className="cta-contact-card group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark rounded-xl"
-            >
-              <div className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(200,168,85,0.3)]">
-                <Phone size={24} className="text-dark" />
-              </div>
-              <div className="text-left min-w-0">
-                <div className="text-overline text-gold/70 mb-1">
-                  Авариен сервиз 24/7
-                </div>
-                <div className="font-mono text-xl md:text-2xl font-semibold text-white group-hover:text-gold transition-colors whitespace-nowrap">
-                  {CONTACT.servicePhones[0]}
-                </div>
-              </div>
-            </a>
-
-            {/* Email card */}
-            <a
-              href={`mailto:${CONTACT.emails[1]}`}
-              className="cta-contact-card group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-dark rounded-xl"
-            >
-              <div className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(200,168,85,0.3)]">
-                <Mail size={24} className="text-dark" />
-              </div>
-              <div className="text-left min-w-0">
-                <div className="text-overline text-gold/70 mb-1">
-                  Имейл
-                </div>
-                <div className="font-mono text-xl md:text-2xl font-semibold text-white group-hover:text-gold transition-colors">
-                  {CONTACT.emails[1]}
-                </div>
-              </div>
-            </a>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.3}>
-          <Button href="/kontakti" variant="cta" size="xl">
-            Към контактите
-            <ArrowRight size={20} />
-          </Button>
-        </ScrollReveal>
+        <div className="mt-14 grid border-y border-white/25 md:grid-cols-2 md:divide-x md:divide-white/25">
+          <a href={`tel:${CONTACT.servicePhones[0].replace(/\s/g, '')}`} className="group flex items-center gap-5 py-6 md:px-7 first:md:pl-0">
+            <Phone size={24} />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-white">24/7 авариен сервиз</p>
+              <p className="mt-1 font-heading text-3xl font-bold group-hover:underline">{CONTACT.servicePhones[0]}</p>
+            </div>
+          </a>
+          <a href={`mailto:${CONTACT.emails[1]}`} className="group flex items-center gap-5 border-t border-white/25 py-6 md:border-t-0 md:px-7">
+            <Mail size={24} />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-white">Имейл за запитвания</p>
+              <p className="mt-1 break-all font-heading text-[clamp(1.35rem,6vw,1.875rem)] font-bold group-hover:underline">{CONTACT.emails[1]}</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-20 md:pb-28">
+    <div className="technical-grid pt-32 pb-20 md:pb-28">
       <div className="max-w-container mx-auto container-padding">
         <Link
           href="/"
@@ -28,11 +28,11 @@ export default function AboutPage() {
           Начало
         </Link>
 
-        <div className="mb-16 md:mb-20">
+        <div className="mb-16 border-l-4 border-gold pl-6 md:mb-20">
           <span className="inline-block text-overline font-semibold uppercase text-gold mb-5 leading-none">
             За нас
           </span>
-          <h1 className="font-heading text-h1 font-semibold text-white mb-6">
+          <h1 className="font-heading text-h1 font-extrabold uppercase text-white mb-6">
             <span className="gold-gradient-text">Хидромотор</span> ООД
           </h1>
           <p className="text-text-secondary text-body-lg max-w-3xl">
